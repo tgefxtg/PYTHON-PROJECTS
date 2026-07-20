@@ -1,10 +1,14 @@
-# THIS IS LIBRARY FOR GIVING TEXT CENTER
-import shutil
+# THIS IS LIBRARY :
+
+    #-> GIVING TEXT CENTER - SHUTIL
+from rich.console import Console
+
+console = Console()
 
 # HEADLINE OF CONTACT SAVER
-print("+---------------+".center(shutil.get_terminal_size().columns))
-print("| CONTACT SAVER |".center(shutil.get_terminal_size().columns))
-print("+---------------+".center(shutil.get_terminal_size().columns))
+console.print("+---------------+", justify="center")
+console.print("[bold cyan]| CONTACT SAVER |[/bold cyan]", justify="center")
+console.print("+---------------+", justify="center")
 
 #EMPTY SET
 contacts = {}
