@@ -2,56 +2,68 @@
 import numpy as np
 from rich.console import Console
 from rich.table import Table
-
-# Create Console
 console = Console()
-
-# Create Table
 table = Table(title="📊 Student Marks Report")
 
-# Heading
-console.print("+---------------+", justify="center")
-console.print("[bold cyan]| STUDENT MARKS |[/bold cyan]", justify="center")
-console.print("+---------------+", justify="center")
-
-# Student Names
+# HEADING
+console.print("+---------------+")
+console.print("| STUDENT MARKS |")
+console.print("+---------------+")
+# Student names
 students = np.array(["Arun", "Rahul", "Akhil", "Neha", "Anu"])
 
-# Student Marks
+# Student marks
 marks = np.array([5, 2, 76, 28, 91])
 
-# Pass Mark
+# Pass mark
 pass_mark = 40
 
-# Average
+
+# 1. Calculate average mark
 average = np.mean(marks)
 
-# Highest
+# 2. Find highest mark
 highest = np.max(marks)
 
-# Lowest
+# 3. Find lowest mark
 lowest = np.min(marks)
 
-# Passed Students
-passed_student = students[marks >= pass_mark]
+# Passed students
+passed_student =  students[marks >= pass_mark]
 
-# Failed Students
+# Failed student
 failed_student = students[marks < pass_mark]
 
-# Pass Percentage
+# CALCULATING TOTAL PASSED STUDENTS PERCENTAGE
 passed_count = np.sum(marks >= pass_mark)
-pass_percentage = (passed_count / len(students)) * 100
+pass_percentage = (passed_count/ len(students)) * 100
 
-# Top Scorer
+# FINDING TOP SCORER
 top_index = np.argmax(marks)
-top_student = students[top_index]
+
+top_student =  students[top_index]
 top_marks = marks[top_index]
 
-# Table Columns
+
+# DISPLAYING RESULT
+
+# print("+----------------------------------+")
+# print("|AVERAGE MARKS: |",average)
+# print("|HIGHEST MARKS: |",highest)
+# print("|LOWEST MARKS: |",lowest)
+# print("|PASSED MARKS: |",passed_student)
+# print("|FAILED STUDENT: |",failed_student)
+# print("|PASS PERCENTAGE: |", pass_percentage)
+# print("|TOP SCORE: |", top_student)
+# print("|TOP MARKS: |",top_index)
+# print("+----------------------------------+")
+
+
+# ADD COLUMNS
 table.add_column("DETAILS", style="cyan", justify="left")
 table.add_column("VALUE", style="green", justify="center")
 
-# Table Rows
+# ADD ROWS
 table.add_row("Average Marks", str(average))
 table.add_row("Highest Marks", str(highest))
 table.add_row("Lowest Marks", str(lowest))
@@ -61,5 +73,5 @@ table.add_row("Pass Percentage", f"{pass_percentage:.2f}%")
 table.add_row("Top Scorer", str(top_student))
 table.add_row("Top Marks", str(top_marks))
 
-# Print Table
+# PRINT TABLE
 console.print(table)
