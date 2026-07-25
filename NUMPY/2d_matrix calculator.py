@@ -33,8 +33,9 @@ matrix_b = np.array([
     [g, h]
 ])
 
+# CALCULATIONS
 
-addition = matrix_b + matrix_b
+addition = matrix_a + matrix_b
 subtraction = matrix_a - matrix_b
 element_multiplication = matrix_a * matrix_b
 matrix_multiplication = matrix_a @ matrix_b
@@ -43,4 +44,21 @@ transpose_b = matrix_b.T
 shape_a = matrix_a.shape
 shape_b = matrix_b.shape
 
-print(type(addition))
+# DISPLAYING THE RESULT :
+   # displaying the matrix 
+print(matrix_a)
+print(matrix_b)
+
+   # displaying 
+matrix_table = Table()
+matrix_table.add_column("CALCULATIONS",style="red",justify= "left")
+matrix_table.add_column("RESULT", style="red", justify= "center" )
+matrix_table.add_row("ADDITION",str(addition))
+matrix_table.add_row("SUBTRACTION",str(subtraction))
+matrix_table.add_row("ELEMENT MULTIPLICATION",str(element_multiplication))
+matrix_table.add_row("MATRIX MULTIPLICATION",str(matrix_multiplication))
+matrix_table.add_row("TRANSPOSE OF MATRIX_A",str(transpose_a))
+matrix_table.add_row("TRANSPOSE OF MATRIX_B",str(transpose_b))
+matrix_table.add_row("SHAPE OF MATRIX_A",str(shape_a))
+matrix_table.add_row("TRANSPOSE OF SHAPE_A",str(shape_b))
+console.print(matrix_table)
