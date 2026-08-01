@@ -7,9 +7,6 @@ from rich.align import Align
 console = Console()
 
 
-# ============================================================
-# TITLE
-# ============================================================
 
 def show_title():
     title = Panel(
